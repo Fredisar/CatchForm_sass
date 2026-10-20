@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Erreur {{ code }} — CatchForm{% endblock %}
+
+{% block content %}
+<div class="auth-wrap">
+  <div class="auth-card error-card">
+    <div class="error-code">{{ code }}</div>
+    <h1>{{ message }}</h1>
+    <p class="sub">Si le problème persiste, reviens à l'accueil.</p>
+    <a href="{{ url_for('public.index') }}" class="btn btn-primary">Retour à l'accueil</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,1021 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<title>CatchForm — Cahier des charges</title>
+<!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml><![endif]-->
+<style>
+@page WordSection1 { size:21.0cm 29.7cm; margin:2.0cm 2.0cm 2.0cm 2.0cm; mso-header-margin:1.0cm; mso-footer-margin:1.0cm; }
+div.WordSection1 { page:WordSection1; }
+body { font-family:Calibri,Arial,sans-serif; font-size:10.5pt; color:#0F172A; }
+p { margin:0 0 6pt 0; font-size:10.5pt; line-height:115%; }
+h1 { font-family:Calibri,Arial,sans-serif; font-size:17pt; color:#4F46E5; page-break-before:always; margin:0 0 12pt 0; mso-outline-level:1; }
+h2 { font-family:Calibri,Arial,sans-serif; font-size:13pt; color:#0F172A; margin:14pt 0 6pt 0; mso-outline-level:2; page-break-after:avoid; }
+h3 { font-family:Calibri,Arial,sans-serif; font-size:11pt; color:#3730A3; margin:10pt 0 5pt 0; mso-outline-level:3; page-break-after:avoid; }
+li { font-size:10.5pt; margin:0 0 3pt 0; line-height:115%; }
+code { font-family:Consolas,"Courier New",monospace; font-size:9.5pt; color:#3730A3; }
+table { border-collapse:collapse; width:100%; }
+p.note { font-size:9pt; color:#64748B; font-style:italic; }
+p.code { font-family:Consolas,"Courier New",monospace; font-size:8.5pt; background:#F1F5F9; margin:0; line-height:normal; }
+</style>
+</head>
+<body lang="FR">
+<div class="WordSection1">
+
+<!-- ======================= PAGE DE GARDE ======================= -->
+<p style="margin-top:110pt;font-size:30pt;font-weight:bold;color:#4F46E5">◆ CATCHFORM</p>
+<p style="font-size:22pt;font-weight:bold;color:#0F172A;border-bottom:solid #4F46E5 2.25pt;padding-bottom:6pt;margin-bottom:8pt">Cahier des charges et dossier de projet</p>
+<p style="font-size:14pt;color:#64748B;margin-bottom:60pt">SaaS de réception de formulaires pour sites statiques</p>
+
+<table style="border-collapse:collapse;width:100%">
+<tr><td style="width:28%;border:solid #D9DCE6 1pt;padding:5pt 7pt;background:#EEF2FF;color:#3730A3;font-weight:bold;font-size:10pt">Projet</td><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;font-size:10pt">CatchForm — backend de formulaires pour sites statiques</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;background:#EEF2FF;color:#3730A3;font-weight:bold;font-size:10pt">Nature du document</td><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;font-size:10pt">Cahier des charges fonctionnel et technique, bilan de réalisation et feuille de route</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;background:#EEF2FF;color:#3730A3;font-weight:bold;font-size:10pt">Version</td><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;font-size:10pt">1.0</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;background:#EEF2FF;color:#3730A3;font-weight:bold;font-size:10pt">Date</td><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;font-size:10pt">16 octobre 2026</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;background:#EEF2FF;color:#3730A3;font-weight:bold;font-size:10pt">État du projet</td><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;font-size:10pt">MVP développé — tests écrits mais non exécutés — non déployé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;background:#EEF2FF;color:#3730A3;font-weight:bold;font-size:10pt">Porteur du projet</td><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;font-size:10pt">[à compléter]</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;background:#EEF2FF;color:#3730A3;font-weight:bold;font-size:10pt">Rédaction</td><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;font-size:10pt">Claude Code (assistant IA)</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;background:#EEF2FF;color:#3730A3;font-weight:bold;font-size:10pt">Diffusion</td><td style="border:solid #D9DCE6 1pt;padding:5pt 7pt;font-size:10pt">Interne — confidentiel</td></tr>
+</table>
+
+<!-- ======================= HISTORIQUE & SOMMAIRE ======================= -->
+<p style="page-break-before:always;font-size:14pt;font-weight:bold;color:#4F46E5;margin-bottom:8pt">Historique des versions</p>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:11%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Version</td>
+<td style="width:15%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Date</td>
+<td style="width:18%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Auteur</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Modifications</td>
+</tr>
+<tr>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">1.0</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">16/10/2026</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Claude Code</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Création du document : cahier des charges, bilan du MVP, feuille de route.</td>
+</tr>
+</table>
+
+<p style="margin-top:20pt;font-size:14pt;font-weight:bold;color:#4F46E5;margin-bottom:8pt">Sommaire</p>
+<p><!--[if supportFields]><span style='mso-element:field-begin'></span> TOC \o "1-2" \h \z \u <span style='mso-element:field-separator'></span><![endif]-->
+1. Synthèse du projet<br>
+2. Présentation du projet<br>
+3. Analyse du marché<br>
+4. Modèle économique<br>
+5. Spécifications fonctionnelles<br>
+6. Exigences non fonctionnelles<br>
+7. Architecture technique<br>
+8. Bilan : ce qui a été réalisé<br>
+9. Reste à faire — feuille de route<br>
+10. Planning prévisionnel<br>
+11. Recette — critères d’acceptation du MVP<br>
+12. Budget prévisionnel<br>
+13. Analyse des risques<br>
+14. Glossaire<br>
+Annexes
+<!--[if supportFields]><span style='mso-element:field-end'></span><![endif]--></p>
+<p class="note">Pour afficher les numéros de page : clic droit sur le sommaire, puis « Mettre à jour les champs » (ou Références → Table des matières).</p>
+
+<!-- ======================= 1. SYNTHÈSE ======================= -->
+<h1>1. Synthèse du projet</h1>
+<p><b>CatchForm</b> est un logiciel en ligne (SaaS) qui permet aux sites statiques de recevoir des formulaires sans développer de serveur. Le client crée un formulaire dans CatchForm, colle l’adresse obtenue dans l’attribut <code>action</code> de sa balise <code>&lt;form&gt;</code>, puis reçoit chaque message par e-mail et dans un tableau de bord.</p>
+<p>Ce document constitue le cahier des charges du projet. Il décrit le besoin, le marché et le modèle économique, spécifie les exigences fonctionnelles et techniques, dresse le bilan de ce qui a été développé et détaille ce qui reste à faire jusqu’au lancement commercial, puis au-delà.</p>
+
+<table style="border-collapse:collapse;width:100%;margin:6pt 0 10pt 0"><tr><td style="border:none;border-left:solid #B45309 4.5pt;background:#FEF3C7;padding:7pt 10pt">
+<p style="font-weight:bold;color:#B45309">État d’avancement au 16 octobre 2026</p>
+<p>Le produit minimum viable (MVP) est <b>entièrement codé</b> : application web, interface, tests automatisés, configuration de déploiement et documentation.</p>
+<p><b>Il n’a pas encore été exécuté.</b> L’outil permettant de lancer des commandes est resté indisponible pendant toute la session de développement : les tests sont écrits mais n’ont jamais tourné, et l’application n’est pas en ligne.</p>
+<p style="margin-bottom:0"><b>Prochaine étape immédiate :</b> installer les dépendances, exécuter les tests et corriger les éventuelles anomalies (phase 0, environ 1,5 jour).</p>
+</td></tr></table>
+
+<h2>1.1 Chiffres clés</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:33%;border:solid #FFFFFF 3pt;background:#EEF2FF;padding:8pt;text-align:center"><p style="text-align:center;font-size:20pt;font-weight:bold;color:#4F46E5;margin:0">62</p><p style="text-align:center;font-size:9pt;color:#64748B;margin:0">exigences fonctionnelles spécifiées</p></td>
+<td style="width:33%;border:solid #FFFFFF 3pt;background:#EEF2FF;padding:8pt;text-align:center"><p style="text-align:center;font-size:20pt;font-weight:bold;color:#4F46E5;margin:0">37</p><p style="text-align:center;font-size:9pt;color:#64748B;margin:0">exigences développées</p></td>
+<td style="width:34%;border:solid #FFFFFF 3pt;background:#EEF2FF;padding:8pt;text-align:center"><p style="text-align:center;font-size:20pt;font-weight:bold;color:#4F46E5;margin:0">25</p><p style="text-align:center;font-size:9pt;color:#64748B;margin:0">exigences à faire ou partielles</p></td>
+</tr>
+<tr>
+<td style="border:solid #FFFFFF 3pt;background:#EEF2FF;padding:8pt;text-align:center"><p style="text-align:center;font-size:20pt;font-weight:bold;color:#4F46E5;margin:0">20</p><p style="text-align:center;font-size:9pt;color:#64748B;margin:0">tests automatisés écrits (non exécutés)</p></td>
+<td style="border:solid #FFFFFF 3pt;background:#EEF2FF;padding:8pt;text-align:center"><p style="text-align:center;font-size:20pt;font-weight:bold;color:#4F46E5;margin:0">0 €</p><p style="text-align:center;font-size:9pt;color:#64748B;margin:0">coût de démarrage (offres gratuites)</p></td>
+<td style="border:solid #FFFFFF 3pt;background:#EEF2FF;padding:8pt;text-align:center"><p style="text-align:center;font-size:20pt;font-weight:bold;color:#4F46E5;margin:0">≈ 2</p><p style="text-align:center;font-size:9pt;color:#64748B;margin:0">clients Pro pour payer l’hébergement</p></td>
+</tr>
+</table>
+
+<h2>1.2 Prochaines étapes</h2>
+<ol>
+<li><b>Phase 0 — Validation technique</b> : exécuter les tests, corriger, recette locale, vérification de la configuration Render.</li>
+<li><b>Phase 1 — Bêta en ligne</b> : mise en ligne gratuite sur Render, hébergement à Francfort (UE).</li>
+<li><b>Phase 2 — Lancement commercial</b> : paiement Stripe, comptes complets, sécurité renforcée, pages légales et RGPD, hébergement payant.</li>
+<li><b>Phase 3 — Croissance</b> : intégrations, anti-spam avancé, statistiques, offre Agence.</li>
+</ol>
+
+<!-- ======================= 2. PRÉSENTATION ======================= -->
+<h1>2. Présentation du projet</h1>
+<h2>2.1 Contexte</h2>
+<p>Une part importante des sites web est aujourd’hui <b>statique</b> : pages HTML hébergées sur GitHub Pages, Netlify ou Cloudflare Pages, sites produits avec Hugo, Jekyll, Astro ou des outils sans code. Ces sites sont rapides, sûrs et peu coûteux à héberger, car aucun serveur applicatif ne tourne derrière.</p>
+<p>Cette absence de serveur a une limite : <b>un site statique ne peut pas traiter un formulaire.</b> Quand un visiteur clique sur « Envoyer », il faut un programme côté serveur pour recevoir, stocker et transmettre les données.</p>
+<h2>2.2 Problématique</h2>
+<p>Un freelance qui livre un site vitrine, ou un développeur qui publie son portfolio, a besoin d’un simple formulaire de contact. Il a trois options, toutes insatisfaisantes :</p>
+<ul>
+<li><b>Développer un backend</b> : coût de développement, serveur à payer, sécurité et maintenance à assumer pour un besoin minime.</li>
+<li><b>Utiliser la fonction de son hébergeur</b> : il reste lié à cet hébergeur.</li>
+<li><b>Utiliser un service spécialisé</b> : les solutions établies sont surtout anglophones et pas toujours hébergées dans l’Union européenne.</li>
+</ul>
+<h2>2.3 Solution proposée</h2>
+<p>CatchForm attribue à chaque formulaire une <b>adresse de réception (endpoint)</b> unique. Il suffit de la placer dans l’attribut <code>action</code> du formulaire HTML. CatchForm se charge du reste :</p>
+<ul>
+<li>réception et stockage des soumissions ;</li>
+<li>filtrage du spam ;</li>
+<li>notification par e-mail du propriétaire du site ;</li>
+<li>redirection du visiteur vers une page de remerciement ;</li>
+<li>consultation et export des données depuis un tableau de bord.</li>
+</ul>
+<p>L’intégration ne demande <b>aucune ligne de code serveur</b> et prend moins de trois minutes.</p>
+<h2>2.4 Objectifs</h2>
+<p>Les cibles ci-dessous sont indicatives et doivent être validées par le porteur du projet.</p>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:29%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Objectif</td>
+<td style="width:37%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Indicateur</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Cible indicative</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mettre en ligne une bêta</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Service accessible en HTTPS, <code>/healthz</code> au vert</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Fin de la semaine 1</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Garantir une intégration rapide</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Temps entre l’inscription et la première soumission</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moins de 3 minutes</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Valider l’intérêt</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Comptes créés</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">50 comptes, 3 mois après le lancement</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Valider la monétisation</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Clients Pro payants</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">10 clients (≈ 90 € de revenu mensuel), 6 mois après le lancement</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Couvrir les coûts</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Revenu mensuel ≥ coût d’hébergement</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">≈ 2 clients Pro</td></tr>
+</table>
+<h2>2.5 Périmètre</h2>
+<h3>Inclus dans le MVP</h3>
+<ul>
+<li>Comptes utilisateurs (inscription, connexion).</li>
+<li>Formulaires illimités avec endpoint unique.</li>
+<li>Réception HTML et JSON, CORS, anti-spam par champ piège.</li>
+<li>Notifications e-mail, redirection, page de remerciement.</li>
+<li>Tableau de bord, pagination, suppression, export CSV.</li>
+<li>Plans Gratuit et Pro avec quota mensuel.</li>
+<li>Site public (accueil, tarifs) et configuration de déploiement.</li>
+</ul>
+<h3>Hors MVP (versions ultérieures)</h3>
+<ul>
+<li>Paiement en ligne automatisé (Stripe).</li>
+<li>Réinitialisation du mot de passe, vérification de l’e-mail, gestion du compte.</li>
+<li>Limitation de débit, anti-spam avancé.</li>
+<li>Intégrations (webhooks, Slack, Google Sheets), pièces jointes, statistiques.</li>
+<li>Back-office d’administration, offre Agence.</li>
+</ul>
+
+<!-- ======================= 3. MARCHÉ ======================= -->
+<h1>3. Analyse du marché</h1>
+<h2>3.1 Cibles et personas</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:18%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Persona</td>
+<td style="width:25%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Profil</td>
+<td style="width:27%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Besoin</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Attentes envers CatchForm</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><b>Léa</b>, freelance web</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Livre 10 à 20 sites vitrines par an pour des artisans et des PME.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Un formulaire de contact fiable sur chaque site, sans serveur à maintenir.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Formulaires illimités, redirection personnalisée, e-mails, prix bas.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><b>Karim</b>, développeur</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Blog sous Hugo, portfolio sur GitHub Pages.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Un formulaire de contact gratuit et simple.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Plan gratuit, envoi <code>fetch()</code> en JSON, intégration en quelques minutes.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><b>Agence web</b></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">5 à 20 personnes, dizaines de sites clients.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Centraliser les formulaires de tous les clients, en conformité avec le RGPD.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Hébergement UE, export CSV ; à terme comptes d’équipe et marque blanche.</td></tr>
+</table>
+<h2>3.2 Concurrence</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:20%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Solution</td>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Type</td>
+<td style="width:29%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Points forts</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Limites exploitables</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Formspree</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Service spécialisé, leader historique</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Notoriété, maturité, nombreuses intégrations</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Interface et support en anglais</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Netlify Forms</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Fonction intégrée à un hébergeur</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Aucune configuration pour les sites hébergés chez Netlify</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Réservé aux sites hébergés chez Netlify</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Basin, Getform, Web3Forms…</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Services spécialisés</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Offres variées, plans gratuits parfois généreux</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Positionnement générique, peu tourné vers le marché francophone</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Backend sur mesure</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Développement interne</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Contrôle total</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Coût, maintenance et sécurité à assumer</td></tr>
+</table>
+<p class="note">Les offres et les tarifs des concurrents évoluent. Une étude tarifaire à jour doit être menée avant le lancement (voir phase 2).</p>
+<h2>3.3 Positionnement et différenciation</h2>
+<table style="border-collapse:collapse;width:100%;margin:4pt 0 8pt 0"><tr><td style="border:none;border-left:solid #4F46E5 4.5pt;background:#EEF2FF;padding:7pt 10pt">
+<p style="margin:0"><b>« Le backend de formulaires simple, en français, hébergé en Europe. »</b></p>
+</td></tr></table>
+<ul>
+<li><b>Langue</b> : interface, documentation et support en français.</li>
+<li><b>Conformité</b> : données hébergées dans l’Union européenne (Francfort), atout RGPD pour les agences et leurs clients.</li>
+<li><b>Prix</b> : plan Pro à 9 €/mois, positionné sous les offres des leaders (à confirmer par l’étude tarifaire).</li>
+<li><b>Simplicité</b> : un copier-coller, aucune bibliothèque à installer.</li>
+<li><b>Acquisition virale</b> : la mention « Propulsé par CatchForm » sur les pages de remerciement du plan gratuit fait connaître le service.</li>
+</ul>
+
+<!-- ======================= 4. MODÈLE ÉCONOMIQUE ======================= -->
+<h1>4. Modèle économique</h1>
+<h2>4.1 Offres</h2>
+<p>Modèle <b>freemium</b> : un plan gratuit pour l’adoption, un plan payant pour la monétisation.</p>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:34%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Caractéristique</td>
+<td style="width:33%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Gratuit</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Pro</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Prix</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">0 €</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">9 € / mois</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Soumissions</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">100 par mois, tous formulaires confondus</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Illimitées</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Formulaires</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Illimités</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Illimités</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Notifications e-mail</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Oui</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Oui</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Anti-spam, export CSV</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Oui</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Oui</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Mention « Propulsé par CatchForm »</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Oui</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Non</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Support</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Standard</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Prioritaire</td></tr>
+</table>
+<p style="margin-top:6pt">Une <b>offre Agence</b> (comptes d’équipe, gestion multi-clients, marque blanche) est à étudier une fois les premiers clients Pro acquis.</p>
+<h2>4.2 Hypothèses de revenus</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:25%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Clients Pro</td>
+<td style="width:37%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Revenu mensuel récurrent</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Revenu annuel</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">2</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">18 €</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">216 €</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">10</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">90 €</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1 080 €</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">50</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">450 €</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">5 400 €</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">100</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">900 €</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">10 800 €</td></tr>
+</table>
+<p class="note">Montants hors taxes, avant frais de paiement, impôts et cotisations sociales. Les coûts de fonctionnement sont détaillés au chapitre 12.</p>
+<h2>4.3 Stratégie d’acquisition</h2>
+<ul>
+<li><b>Référencement naturel</b> : tutoriels ciblés, par exemple « formulaire de contact Hugo sans backend » ou « formulaire GitHub Pages ».</li>
+<li><b>Communautés</b> : Reddit (r/webdev, r/SideProject), Indie Hackers, Product Hunt, communautés de développeurs francophones.</li>
+<li><b>Démarchage</b> : freelances et agences web, qui livrent de nombreux sites vitrines chaque année.</li>
+<li><b>Effet viral</b> : mention « Propulsé par CatchForm » sur chaque page de remerciement du plan gratuit.</li>
+</ul>
+
+<!-- ======================= 5. SPÉCIFICATIONS FONCTIONNELLES ======================= -->
+<h1>5. Spécifications fonctionnelles</h1>
+<h2>5.1 Acteurs</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Acteur</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Description</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Prospect</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Personne qui découvre CatchForm sur le site public (accueil, tarifs).</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Client</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Titulaire d’un compte CatchForm, propriétaire d’un ou de plusieurs formulaires.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Visiteur final</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Personne qui remplit un formulaire sur le site d’un client. Il n’a pas de compte CatchForm.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Administrateur</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Exploitant du service. Agit aujourd’hui en ligne de commande (<code>set-plan</code>), demain via un back-office.</td></tr>
+</table>
+<h2>5.2 Parcours principal</h2>
+<ol>
+<li>Le client crée un compte, gratuitement et sans carte bancaire.</li>
+<li>Il crée un formulaire et lui donne un nom ; il peut indiquer une URL de redirection.</li>
+<li>Il copie l’endpoint affiché (<code>https://…/f/&lt;identifiant&gt;</code>).</li>
+<li>Il colle cet endpoint dans l’attribut <code>action</code> du formulaire de son site statique.</li>
+<li>Un visiteur final remplit le formulaire et l’envoie.</li>
+<li>CatchForm filtre le spam, enregistre la soumission, notifie le client par e-mail et redirige le visiteur.</li>
+<li>Le client consulte les soumissions dans son tableau de bord et peut les exporter en CSV.</li>
+</ol>
+<h2>5.3 Exigences par module</h2>
+<p>Chaque exigence est identifiée et priorisée selon la méthode <b>MoSCoW</b> : <b>M</b> = indispensable, <b>S</b> = important, <b>C</b> = souhaitable. Le statut indique l’état de réalisation.</p>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:18%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Signification</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Code écrit et couvert par les tests rédigés. Attention : les tests n’ont pas encore été exécutés (voir chapitre 8).</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">Partiel</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Fonction disponible sous une forme simplifiée.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Non développé ; planifié dans la feuille de route (chapitre 9).</td></tr>
+</table>
+
+<h3>5.3.1 Comptes et authentification (AUTH)</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:13%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">ID</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:8%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:15%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">AUTH-01</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Inscription par e-mail et mot de passe : 8 caractères minimum, e-mail normalisé en minuscules, un seul compte par e-mail.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">AUTH-02</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Connexion et déconnexion, avec un message d’erreur générique en cas d’échec (ne révèle pas si le compte existe).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">AUTH-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Session mémorisée 30 jours.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">AUTH-04</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Retour à la page demandée après connexion, protégé contre les redirections ouvertes.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">AUTH-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Réinitialisation du mot de passe par e-mail.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">AUTH-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Vérification de l’adresse e-mail à l’inscription.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">AUTH-07</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Espace « Mon compte » : modification de l’e-mail et du mot de passe.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">AUTH-08</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Suppression du compte et de toutes les données associées (droit à l’effacement).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">AUTH-09</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Connexion avec un compte Google ou GitHub.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+
+<h3>5.3.2 Gestion des formulaires (FORM)</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:13%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">ID</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:8%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:15%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FORM-01</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Création d’un formulaire : nom et URL de redirection optionnelle.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FORM-02</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Identifiant public aléatoire et non devinable (11 caractères) formant l’endpoint <code>/f/&lt;id&gt;</code>.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FORM-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Liste des formulaires avec nombre de soumissions et date de création.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FORM-04</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Paramètres modifiables : nom, redirection, activation des notifications.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FORM-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Suppression d’un formulaire et de ses soumissions, après confirmation.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FORM-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Validation de l’URL de redirection : http(s) uniquement, 500 caractères maximum.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FORM-07</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Affichage de l’endpoint avec bouton « Copier » et exemple de code HTML prêt à coller.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FORM-08</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Restriction des domaines autorisés à envoyer vers un formulaire.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FORM-09</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mise en pause d’un formulaire.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+
+<h3>5.3.3 Réception des soumissions — endpoint public (ING)</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:13%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">ID</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:8%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:15%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-01</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Réception en POST des données d’un formulaire HTML classique (form-data ou urlencoded).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-02</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Réception en JSON via <code>fetch()</code>, avec réponse JSON <code>{"ok": true}</code>.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">En-têtes CORS autorisant l’envoi depuis n’importe quel domaine, requêtes préliminaires (OPTIONS) comprises.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-04</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Anti-spam par champ piège <code>_gotcha</code> : l’envoi est ignoré sans que le robot le sache.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Champs spéciaux : <code>_subject</code> fixe l’objet de l’e-mail ; les champs commençant par « _ » ne sont pas enregistrés.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Regroupement des champs à valeurs multiples (cases à cocher).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-07</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Après envoi : redirection (code 303) vers l’URL configurée, sinon page « Merci » avec lien de retour.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-08</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Erreurs explicites en HTML ou en JSON : formulaire inconnu (404), contenu illisible (400), formulaire vide (422), quota atteint (402).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-09</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Page d’information si l’endpoint est ouvert directement dans un navigateur.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-10</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Taille maximale d’une requête : 100 Ko.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-11</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Limitation de débit par adresse IP et par formulaire.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-12</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Anti-spam avancé optionnel (Cloudflare Turnstile ou reCAPTCHA).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ING-13</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Pièces jointes (fichiers).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+
+<h3>5.3.4 Tableau de bord et données (DASH)</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:13%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">ID</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:8%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:15%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">DASH-01</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Consultation des soumissions, de la plus récente à la plus ancienne, par pages de 50.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">DASH-02</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Suppression d’une soumission.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">DASH-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Export CSV compatible Excel : UTF-8 avec BOM, une colonne par champ rencontré, formules neutralisées.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">DASH-04</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Jauge de consommation mensuelle du plan gratuit et alerte quand le quota est atteint.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">DASH-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Recherche et filtres dans les soumissions.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">DASH-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Statistiques : envois par jour, taux de spam.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">DASH-07</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Dates affichées dans le fuseau horaire de l’utilisateur (aujourd’hui affichées en UTC).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">Partiel</td></tr>
+</table>
+
+<h3>5.3.5 Notifications (NOT)</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:13%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">ID</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:8%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:15%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">NOT-01</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">E-mail au propriétaire à chaque soumission (API Resend), activable formulaire par formulaire.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">NOT-02</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Adresse de réponse égale à l’e-mail du visiteur : « Répondre » lui écrit directement.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">NOT-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Contenu de l’e-mail échappé (protection contre l’injection HTML).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">NOT-04</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Envoi en arrière-plan : n’allonge pas le temps de réponse au visiteur.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">NOT-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">File d’attente avec nouvelles tentatives en cas d’échec d’envoi.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">NOT-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Destinataires multiples et accusé de réception envoyé au visiteur.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">NOT-07</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Webhooks et intégrations (Slack, Google Sheets, Zapier).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+
+<h3>5.3.6 Offres et facturation (PLAN)</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:13%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">ID</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:8%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:15%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PLAN-01</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Plan Gratuit limité à 100 soumissions par mois, tous formulaires confondus (valeur configurable).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PLAN-02</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Plan Pro sans limite et sans mention « Propulsé par CatchForm » sur la page de remerciement.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PLAN-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Page Tarifs ; bouton « Passer Pro » qui ouvre un e-mail (solution temporaire).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PLAN-04</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Commande d’administration <code>set-plan</code> pour changer le plan d’un client.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PLAN-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Paiement en ligne Stripe (Checkout + webhooks) et activation automatique du plan Pro.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PLAN-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Portail client : factures, changement de carte, résiliation.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PLAN-07</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">E-mails d’alerte à 80 % et 100 % du quota gratuit.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PLAN-08</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Offre Agence : comptes d’équipe, gestion multi-clients.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+
+<h3>5.3.7 Site public et exploitation (PUB, ADM)</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:13%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">ID</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:8%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:15%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PUB-01</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Page d’accueil commerciale : proposition de valeur, étapes, fonctionnalités, appel à l’action.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PUB-02</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Page Tarifs.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PUB-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Pages d’erreur personnalisées (page introuvable, session expirée).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PUB-04</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mentions légales, CGU/CGV et politique de confidentialité.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PUB-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Documentation utilisateur par outil (Hugo, Jekyll, Astro, GitHub Pages…).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">PUB-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Blog et tutoriels pour l’acquisition (SEO).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ADM-01</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Sonde de santé <code>/healthz</code> (application et base de données).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ADM-02</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Back-office : comptes, plans, volumes, modération.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ADM-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Suivi des erreurs (Sentry) et surveillance de disponibilité.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+
+<h2>5.4 Récapitulatif</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:67%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Indicateur</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Valeur</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Exigences spécifiées</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">62</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Développées</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">37</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Partielles</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">À faire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">24</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Exigences indispensables (M) restant à réaliser</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">7</td></tr>
+</table>
+
+<!-- ======================= 6. EXIGENCES NON FONCTIONNELLES ======================= -->
+<h1>6. Exigences non fonctionnelles</h1>
+<h2>6.1 Sécurité</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:18%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mots de passe hachés et salés (Werkzeug).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Protection CSRF sur toutes les actions du tableau de bord (Flask-WTF) ; endpoint public exempté par conception.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Cookies de session HttpOnly et SameSite=Lax, réservés au HTTPS en production.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Isolation des données : un client ne peut ni voir ni modifier les données d’un autre (réponse 404).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Protection contre les redirections ouvertes après connexion.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Échappement systématique des contenus (pages, e-mails) ; formules neutralisées dans le CSV.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Taille maximale des requêtes (100 Ko) ; prise en compte du proxy HTTPS de l’hébergeur.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">En-têtes de sécurité HTTP (CSP, HSTS, X-Frame-Options).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Limitation de débit sur la connexion et l’endpoint public.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+<h2>6.2 Performance et disponibilité</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:18%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Réponse de l’endpoint en moins de 500 ms, hors réveil du serveur (objectif).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">Non mesuré</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Compteurs calculés en base de données, sans charger les soumissions en mémoire.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Pagination des soumissions (50 par page).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Disponibilité de 99,5 % en production (impossible sur le plan gratuit, qui se met en veille).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Sauvegardes quotidiennes de la base de données (offre payante).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+<h2>6.3 Conformité RGPD</h2>
+<p>CatchForm stocke les données personnelles des visiteurs finaux pour le compte de ses clients. Au sens du RGPD, <b>CatchForm est sous-traitant</b> et ses clients sont responsables de traitement.</p>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:18%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Hébergement dans l’Union européenne (région Francfort dans <code>render.yaml</code>).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">Prêt, non vérifié</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Accord de sous-traitance (DPA) intégré aux CGU ; registre des traitements.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Durée de conservation des adresses IP et des soumissions définie et documentée.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Droit à l’effacement : suppression des soumissions et des formulaires (fait), suppression du compte (à faire).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">Partiel</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Droit à la portabilité : export CSV par formulaire.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Polices de caractères auto-hébergées (aujourd’hui chargées depuis Google Fonts).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+<h2>6.4 Ergonomie, compatibilité et maintenabilité</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Exigence</td>
+<td style="width:18%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Interface responsive : mobile, tablette, ordinateur.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Fonctionnement sans JavaScript sur le site du client (envoi HTML natif).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Accessibilité : libellés de formulaires présents ; audit des contrastes et de la navigation au clavier à mener.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">Partiel</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Code organisé en modules (blueprints), configuration par variables d’environnement.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Tests automatisés : 20 fonctions de test, 27 cas.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">Écrit, non exécuté</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Migrations de schéma de base de données (Flask-Migrate).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Intégration continue : tests à chaque push.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEE2E2;color:#991B1B;font-weight:bold">À faire</td></tr>
+</table>
+
+<!-- ======================= 7. ARCHITECTURE ======================= -->
+<h1>7. Architecture technique</h1>
+<h2>7.1 Choix technologiques</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:20%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Couche</td>
+<td style="width:38%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Technologie</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Justification</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Langage</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Python 3.10 ou plus (3.13 en local)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Langage déjà utilisé par le porteur du projet.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Framework web</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Flask 3</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Léger, éprouvé, adapté à un MVP.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Accès aux données</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Flask-SQLAlchemy 3 / SQLAlchemy 2</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Même code pour SQLite et PostgreSQL.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Authentification</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Flask-Login</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Sessions et « se souvenir de moi ».</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Protection CSRF</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Flask-WTF</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Jetons sur toutes les actions du tableau de bord.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Base de données</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">SQLite (développement), PostgreSQL (production, pilote psycopg 3)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Aucune installation en local ; base robuste en production.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Serveur d’application</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Gunicorn (1 processus, 8 fils d’exécution)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Standard de production pour Flask.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">E-mails</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">API HTTP Resend</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Simple, offre gratuite pour démarrer.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Hébergement</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Render (Blueprint <code>render.yaml</code>), région Francfort</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Déploiement en un clic, HTTPS inclus, données dans l’UE.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Interface</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Gabarits Jinja, CSS sur mesure, polices Inter et JetBrains Mono</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Aucune dépendance front-end à maintenir.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Tests</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">pytest</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Tests de bout en bout avec le client de test Flask.</td></tr>
+</table>
+
+<h2>7.2 Schéma de fonctionnement</h2>
+<table style="border-collapse:collapse;width:100%;margin-bottom:8pt">
+<tr>
+<td style="width:24%;border:solid #D9DCE6 1pt;background:#EEF2FF;padding:8pt;text-align:center;font-size:9.5pt;font-weight:bold;color:#3730A3">Site statique<br>du client</td>
+<td style="width:14%;border:none;padding:4pt;text-align:center;font-size:8.5pt;color:#64748B">→<br>POST /f/&lt;id&gt;</td>
+<td style="width:24%;border:solid #D9DCE6 1pt;background:#EEF2FF;padding:8pt;text-align:center;font-size:9.5pt;font-weight:bold;color:#3730A3">CatchForm<br>Flask + Gunicorn<br>(Render)</td>
+<td style="width:14%;border:none;padding:4pt;text-align:center;font-size:8.5pt;color:#64748B">→<br>SQL</td>
+<td style="border:solid #D9DCE6 1pt;background:#EEF2FF;padding:8pt;text-align:center;font-size:9.5pt;font-weight:bold;color:#3730A3">PostgreSQL<br>(soumissions)</td>
+</tr>
+<tr>
+<td style="border:none;padding:2pt">&nbsp;</td>
+<td style="border:none;padding:2pt">&nbsp;</td>
+<td style="border:none;padding:2pt;text-align:center;font-size:12pt;color:#64748B">↕</td>
+<td style="border:none;padding:2pt">&nbsp;</td>
+<td style="border:none;padding:2pt">&nbsp;</td>
+</tr>
+<tr>
+<td style="border:solid #D9DCE6 1pt;background:#EEF2FF;padding:8pt;text-align:center;font-size:9.5pt;font-weight:bold;color:#3730A3">Client<br>(navigateur)</td>
+<td style="border:none;padding:4pt;text-align:center;font-size:8.5pt;color:#64748B">↔<br>HTTPS</td>
+<td style="border:solid #D9DCE6 1pt;background:#EEF2FF;padding:8pt;text-align:center;font-size:9.5pt;font-weight:bold;color:#3730A3">Tableau de bord<br>(même application)</td>
+<td style="border:none;padding:4pt;text-align:center;font-size:8.5pt;color:#64748B">→<br>HTTPS</td>
+<td style="border:solid #D9DCE6 1pt;background:#EEF2FF;padding:8pt;text-align:center;font-size:9.5pt;font-weight:bold;color:#3730A3">API Resend<br>(e-mails)</td>
+</tr>
+</table>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:7%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">N°</td>
+<td style="width:31%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Échange</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Description</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Site statique → CatchForm</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Le visiteur final envoie le formulaire (HTML natif ou JSON via <code>fetch()</code>) vers <code>/f/&lt;id&gt;</code>.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">2</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">CatchForm → PostgreSQL</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Vérification du quota, puis enregistrement de la soumission.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">3</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">CatchForm → Resend</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Notification e-mail du client, envoyée en arrière-plan.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">4</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">CatchForm → visiteur final</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Redirection 303, page « Merci » ou réponse JSON.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">5</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Client ↔ CatchForm</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Tableau de bord authentifié (session et jeton CSRF).</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">6</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Render → CatchForm</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Contrôle de santé régulier sur <code>/healthz</code>.</td></tr>
+</table>
+
+<h2>7.3 Modèle de données</h2>
+<p>Trois tables, reliées par des clés étrangères avec suppression en cascade : un <b>utilisateur</b> possède plusieurs <b>formulaires</b>, et un formulaire reçoit plusieurs <b>soumissions</b>.</p>
+<h3>Table users — comptes clients</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Champ</td>
+<td style="width:20%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Type</td>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Contraintes</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Description</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">id</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Entier</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Clé primaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Identifiant interne</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">email</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Texte (255)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Unique, indexé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Adresse e-mail en minuscules</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">password_hash</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Texte (255)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Obligatoire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Empreinte du mot de passe</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">plan</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Texte (20)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Défaut : free</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Plan : free ou pro</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">created_at</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Date-heure</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">UTC</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Date d’inscription</td></tr>
+</table>
+<h3>Table forms — formulaires</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Champ</td>
+<td style="width:20%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Type</td>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Contraintes</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Description</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">id</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Entier</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Clé primaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Identifiant interne</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">public_id</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Texte (16)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Unique, indexé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Identifiant public de l’endpoint <code>/f/&lt;public_id&gt;</code></td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">name</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Texte (120)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Obligatoire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Nom donné par le client</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">redirect_url</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Texte (500)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Optionnel</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Page de destination après envoi</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">notify</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Booléen</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Défaut : vrai</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Notification e-mail activée</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">user_id</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Entier</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Clé étrangère, indexé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Propriétaire du formulaire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">created_at</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Date-heure</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">UTC</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Date de création</td></tr>
+</table>
+<h3>Table submissions — soumissions</h3>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Champ</td>
+<td style="width:20%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Type</td>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Contraintes</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Description</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">id</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Entier</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Clé primaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Identifiant interne</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">form_id</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Entier</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Clé étrangère, indexé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Formulaire concerné</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">data</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Texte</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">JSON</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Champs envoyés par le visiteur final</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">ip</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Texte (64)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Optionnel</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Adresse IP de l’expéditeur (durée de conservation à définir)</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">created_at</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Date-heure</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">UTC, indexé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Date de réception (sert au calcul du quota)</td></tr>
+</table>
+
+<h2>7.4 Routes de l’application</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:14%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Méthode</td>
+<td style="width:31%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">URL</td>
+<td style="width:18%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Accès</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Rôle</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Public</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Accueil (redirige vers le tableau de bord si connecté)</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/pricing</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Public</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Tarifs</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/healthz</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Public</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Contrôle de santé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET, POST</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/register</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Public</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Inscription</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET, POST</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/login</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Public</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Connexion</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/logout</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Connecté</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Déconnexion</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/dashboard</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Connecté</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Liste des formulaires et jauge de quota</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">POST</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/forms</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Connecté</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Création d’un formulaire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/forms/&lt;id&gt;</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Propriétaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Endpoint, paramètres et soumissions</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">POST</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/forms/&lt;id&gt;/settings</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Propriétaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mise à jour des paramètres</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">POST</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/forms/&lt;id&gt;/delete</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Propriétaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Suppression du formulaire</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/forms/&lt;id&gt;/export.csv</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Propriétaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Export CSV</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">POST</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/submissions/&lt;n&gt;/delete</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Propriétaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Suppression d’une soumission</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">GET</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/f/&lt;id&gt;</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Public</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Page d’information sur l’endpoint</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">POST</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/f/&lt;id&gt;</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Public (CORS)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Réception d’une soumission</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">OPTIONS</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">/f/&lt;id&gt;</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Public (CORS)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Requête préliminaire des navigateurs</td></tr>
+</table>
+
+<h2>7.5 Configuration</h2>
+<p>Toute la configuration passe par des variables d’environnement ; aucun secret n’est écrit dans le code.</p>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:31%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Variable</td>
+<td style="width:42%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Rôle</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Valeur par défaut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">SECRET_KEY</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Signature des sessions (obligatoire en production, générée par Render)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Valeur de développement</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">DATABASE_URL</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">URL de la base PostgreSQL</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">SQLite local</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">SESSION_COOKIE_SECURE</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Cookies réservés au HTTPS</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">0 (1 en production)</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">RESEND_API_KEY</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Active les notifications e-mail</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Vide : désactivées</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">MAIL_FROM</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Expéditeur des e-mails</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">CatchForm &lt;onboarding@resend.dev&gt;</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">CONTACT_EMAIL</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Destinataire des demandes « Passer Pro »</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">contact@example.com</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">FREE_PLAN_MONTHLY_LIMIT</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Quota mensuel du plan gratuit</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">100</td></tr>
+</table>
+
+<h2>7.6 Organisation du code</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:38%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Fichier ou dossier</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Rôle</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/__init__.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Fabrique d’application, pages d’erreur, commande <code>set-plan</code></td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/models.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Modèles User, Form, Submission ; calcul du quota mensuel</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/auth.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Inscription, connexion, déconnexion</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/dashboard.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Tableau de bord, paramètres, suppressions, export CSV</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/ingest.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Endpoint public <code>/f/&lt;id&gt;</code> : le cœur du produit</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/notify.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Notifications e-mail via Resend</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/public.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Accueil, tarifs, <code>/healthz</code></td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/extensions.py, app/utils.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Extensions Flask, fonctions partagées</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/templates/</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">9 pages HTML (gabarits Jinja)</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">app/static/style.css</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Feuille de style responsive</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">config.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Configuration par variables d’environnement</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">wsgi.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Point d’entrée, en local et en production</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">tests/test_app.py</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">20 tests automatisés</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">render.yaml, Procfile</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Déploiement sur Render ou sur un autre hébergeur</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">README.md, DEPLOIEMENT.md</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Documentation du projet et guide de mise en ligne</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">exemple/contact.html</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Site statique de démonstration</td></tr>
+</table>
+
+<!-- ======================= 8. BILAN ======================= -->
+<h1>8. Bilan : ce qui a été réalisé</h1>
+<h2>8.1 Déroulé des travaux</h2>
+<ol>
+<li><b>Livrable préalable</b> : un tableau HTML stylé (<code>tableau.html</code>), première demande de la session, hors projet CatchForm.</li>
+<li><b>Étude de l’environnement</b> : un projet Flask existait déjà (<code>App.py</code>, Python 3.13). Il n’a <b>pas été modifié</b> ; CatchForm a été créé dans un dossier dédié, <code>catchform/</code>.</li>
+<li><b>Choix de l’idée</b> : backend de formulaires pour sites statiques, sur un marché prouvé, réalisable intégralement en MVP.</li>
+<li><b>Développement du serveur</b> : modèles de données, authentification, tableau de bord, endpoint public, notifications e-mail, quota mensuel.</li>
+<li><b>Durcissement de la sécurité</b> : CSRF, redirections ouvertes, injection de formules dans le CSV, isolation des comptes, cookies sécurisés, taille maximale des requêtes, prise en compte du proxy HTTPS.</li>
+<li><b>Interface</b> : 9 pages (accueil, tarifs, inscription, connexion, tableau de bord, détail d’un formulaire, page de remerciement, erreurs) et une feuille de style responsive.</li>
+<li><b>Tests automatisés</b> : 20 fonctions de test (27 cas) couvrant tous les parcours.</li>
+<li><b>Industrialisation</b> : point d’entrée Gunicorn, dépendances, <code>Procfile</code>, Blueprint Render, <code>.gitignore</code>.</li>
+<li><b>Documentation</b> : <code>README.md</code> (idée, modèle économique, installation), <code>DEPLOIEMENT.md</code> (mise en ligne pas à pas), page de démonstration et présent cahier des charges.</li>
+</ol>
+<table style="border-collapse:collapse;width:100%;margin:6pt 0 10pt 0"><tr><td style="border:none;border-left:solid #B45309 4.5pt;background:#FEF3C7;padding:7pt 10pt">
+<p style="font-weight:bold;color:#B45309">Contrainte rencontrée</p>
+<p>L’outil d’exécution de commandes est resté indisponible pendant toute la session : <b>aucune dépendance n’a été installée, aucun test n’a été exécuté et l’application n’a jamais été lancée.</b></p>
+<p style="margin-bottom:0">Le code a été relu (cohérence des routes, des modèles, des gabarits et des imports), ce qui ne remplace pas une exécution. Pour la même raison, la syntaxe de <code>render.yaml</code> et les limites du plan gratuit de Render n’ont pas pu être vérifiées dans la documentation officielle.</p>
+</td></tr></table>
+
+<h2>8.2 Livrables</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:27%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Livrable</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Emplacement</td>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Application web</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>catchform/app/</code> (9 modules Python)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Interface</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>app/templates/</code> (9 pages), <code>app/static/style.css</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Développé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Tests automatisés</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>tests/test_app.py</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">Écrit, non exécuté</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Configuration de déploiement</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>render.yaml</code>, <code>Procfile</code>, <code>wsgi.py</code>, <code>requirements.txt</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">Prêt, non vérifié</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Documentation</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>README.md</code>, <code>DEPLOIEMENT.md</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Rédigé</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Démonstration</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>exemple/contact.html</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Prêt</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Cahier des charges</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>docs/</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#DCFCE7;color:#166534;font-weight:bold">Ce document</td></tr>
+</table>
+
+<h2>8.3 Couverture des tests</h2>
+<p>Tous les tests sont dans <code>tests/test_app.py</code>. Ils utilisent une base SQLite en mémoire et le client de test de Flask. <b>Ils n’ont pas encore été exécutés.</b></p>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:44%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Test</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Ce qui est vérifié</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_public_pages</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Pages publiques (accueil, tarifs, <code>/healthz</code>) et page introuvable (404).</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_register_login_logout</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Inscription, connexion, déconnexion, retour à la page demandée, refus d’un mauvais mot de passe.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_register_validation</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Refus d’un mot de passe trop court et d’un e-mail déjà utilisé, sans tenir compte des majuscules.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_safe_next_blocks_open_redirects</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">8 cas : les redirections vers un site externe sont bloquées (URL complète, //, barre oblique inverse, tabulation).</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_submission_flow</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Envoi HTML complet : champs enregistrés, champs « _ » ignorés, cases multiples regroupées, affichage dans le tableau de bord.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_json_submission_and_cors</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Envoi JSON, réponse <code>{"ok": true}</code>, en-têtes CORS et requête préliminaire OPTIONS.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_honeypot_silently_drops_spam</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Champ piège rempli : rien n’est enregistré, mais la réponse indique un succès.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_rejects_empty_invalid_and_unknown</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Erreurs 422 (vide), 400 (JSON invalide), 404 (formulaire inconnu) ; page d’information en GET.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_redirect_after_submission</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Redirection 303 vers l’URL configurée.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_invalid_redirect_url_is_rejected</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Refus d’une URL de redirection dangereuse (<code>javascript:</code>).</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_free_plan_monthly_limit</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Quota mensuel : refus 402 au-delà, alerte au tableau de bord, remise à zéro au changement de mois, plan Pro illimité.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_pro_thank_you_page_has_no_branding</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mention « Propulsé par CatchForm » présente en Gratuit, absente en Pro.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_email_notification</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Destinataire, objet nettoyé, adresse de réponse, échappement HTML, désactivation par formulaire.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_users_cannot_touch_other_users_forms</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Isolation : un autre compte obtient 404 en consultation, export et suppression.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_update_settings</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mise à jour du nom, de la redirection et des notifications.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_delete_submission_and_form</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Suppression d’une soumission, puis d’un formulaire avec ses soumissions.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_pagination</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Pagination des soumissions : ordre et découpage en pages.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_csv_export_is_excel_safe</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Export CSV : BOM UTF-8, colonnes, accents, neutralisation des formules.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_csrf_protects_dashboard_but_not_public_endpoint</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Protection CSRF active sur le tableau de bord ; endpoint public accessible depuis un site tiers.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>test_cli_set_plan</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Commande d’administration de changement de plan.</td></tr>
+</table>
+
+<h2>8.4 Limites connues du code actuel</h2>
+<ul>
+<li><b>Notifications sans file d’attente</b> : envoyées dans un fil d’exécution ; un e-mail est perdu si le serveur redémarre pendant l’envoi, et il n’y a pas de nouvelle tentative.</li>
+<li><b>Pas de migrations</b> : <code>db.create_all()</code> crée les tables manquantes mais ne modifie jamais une table existante. Flask-Migrate est indispensable avant toute évolution des modèles.</li>
+<li><b>Pas de limitation de débit</b> : l’endpoint public peut être visé par du spam massif.</li>
+<li><b>E-mail non vérifié</b> : un tiers pourrait créer un compte avec l’adresse d’autrui et lui faire recevoir des notifications.</li>
+<li><b>Quota approximatif sous forte concurrence</b> : deux envois simultanés peuvent dépasser la limite d’une unité (impact négligeable).</li>
+<li><b>Dates en UTC</b> dans le tableau de bord.</li>
+<li><b>Google Fonts</b> : le chargement des polices transmet l’adresse IP des utilisateurs à Google (point RGPD).</li>
+<li><b>Hébergement gratuit</b> : mise en veille du service et expiration de la base gratuite (à vérifier sur render.com).</li>
+</ul>
+
+<!-- ======================= 9. RESTE À FAIRE ======================= -->
+<h1>9. Reste à faire — feuille de route</h1>
+<p>Les efforts sont exprimés en <b>jours de travail estimés pour une personne</b> (développement, tests et documentation compris). Ce sont des ordres de grandeur.</p>
+<h2>Vue d’ensemble</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:38%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Phase</td>
+<td style="width:28%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Objectif</td>
+<td style="width:20%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Période</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Effort estimé</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Phase 0 — Validation technique</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Prouver que le code fonctionne</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Immédiat (semaine 1)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Phase 1 — Mise en ligne de la bêta</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Service public gratuit en HTTPS</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Semaine 1</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1,6 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Phase 2 — Prérequis au lancement commercial</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Facturer légalement et en sécurité</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Semaines 2 à 4</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">15 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Phase 3 — Croissance</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Augmenter la valeur et la conversion</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mois 2 à 6</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">25,25 j</td></tr>
+</table>
+
+<h2>9.1 Phase 0 — Validation technique</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:28%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Tâche</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Détail</td>
+<td style="width:12%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Réf.</td>
+<td style="width:7%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:9%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Effort</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Exécuter les tests automatisés</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Créer l’environnement virtuel, installer les dépendances, lancer <code>pytest</code>.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,25 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Corriger les anomalies</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Selon les résultats des tests et du premier lancement.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Recette manuelle locale</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Dérouler les scénarios du chapitre 11 avec <code>exemple/contact.html</code>.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Vérifier la configuration Render</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Syntaxe de <code>render.yaml</code> et limites du plan gratuit, dans la documentation officielle.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,25 j</td></tr>
+</table>
+
+<h2>9.2 Phase 1 — Mise en ligne de la bêta</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:28%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Tâche</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Détail</td>
+<td style="width:12%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Réf.</td>
+<td style="width:7%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:9%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Effort</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Créer le dépôt GitHub privé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Initialiser Git et pousser le code (commandes dans <code>DEPLOIEMENT.md</code>).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,25 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Déployer avec le Blueprint Render</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Création automatique de l’application et de la base PostgreSQL à Francfort.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,25 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Contrôler la production</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>/healthz</code>, création de compte, envoi réel depuis la page de démonstration.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,25 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Activer les e-mails</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Compte Resend et clé API dans les variables d’environnement Render.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">NOT-01</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,25 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Nom de domaine</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Achat, CNAME vers Render, SPF/DKIM pour Resend, variable <code>MAIL_FROM</code>.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Contact commercial</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Variable <code>CONTACT_EMAIL</code> pour le bouton « Passer Pro ».</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">PLAN-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,1 j</td></tr>
+</table>
+
+<h2>9.3 Phase 2 — Prérequis au lancement commercial</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:28%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Tâche</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Détail</td>
+<td style="width:12%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Réf.</td>
+<td style="width:7%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:9%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Effort</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Paiement Stripe</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Stripe Checkout, webhooks, activation et désactivation automatiques du plan Pro.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">PLAN-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">3 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Portail client</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Factures, changement de carte, résiliation (portail Stripe).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">PLAN-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Réinitialisation du mot de passe</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Lien à usage unique et à durée limitée, envoyé par e-mail.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">AUTH-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Vérification de l’e-mail</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Confirmation obligatoire avant tout envoi de notification.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">AUTH-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Espace « Mon compte »</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Changement d’e-mail et de mot de passe, suppression du compte et des données.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">AUTH-07/08</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Limitation de débit</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Flask-Limiter sur la connexion et sur l’endpoint public.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">ING-11</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Migrations de base de données</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Flask-Migrate (Alembic), avant toute évolution des modèles.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">En-têtes de sécurité HTTP</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">CSP, HSTS, X-Frame-Options, Referrer-Policy.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Polices auto-hébergées</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Supprimer l’appel à Google Fonts (transfert d’adresses IP hors UE).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,25 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Alertes de quota</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">E-mail à 80 % et à 100 % du quota gratuit.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">PLAN-07</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Intégration continue</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">GitHub Actions : tests à chaque push.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Supervision</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Sentry (erreurs) et surveillance de disponibilité.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">ADM-03</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Pages légales</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mentions légales, CGU/CGV, politique de confidentialité.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">PUB-04</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">2 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Conformité RGPD</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Accord de sous-traitance (DPA), registre des traitements, durée de conservation des IP.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Hébergement payant</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Service sans mise en veille et base de données sauvegardée.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,25 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Statut juridique</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Structure permettant de facturer (par exemple micro-entreprise).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">M</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Étude tarifaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Relevé à jour des offres et des prix des concurrents.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">—</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+</table>
+
+<h2>9.4 Phase 3 — Croissance</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:28%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Tâche</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Détail</td>
+<td style="width:12%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Réf.</td>
+<td style="width:7%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Prio.</td>
+<td style="width:9%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">Effort</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">File d’attente des e-mails</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Envoi fiable avec nouvelles tentatives (par exemple RQ et Redis).</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">NOT-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Anti-spam avancé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Cloudflare Turnstile, optionnel par formulaire.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">ING-12</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Back-office d’administration</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Comptes, plans, volumes, modération.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">ADM-02</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">2 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Documentation par outil</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Guides Hugo, Jekyll, Astro, GitHub Pages, Webflow…</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">PUB-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">S</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">2 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Webhooks et intégrations</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Webhooks, Slack, Google Sheets, Zapier.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">NOT-07</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">4 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Recherche et filtres</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Dans les soumissions.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">DASH-05</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Statistiques</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Envois par jour, taux de spam.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">DASH-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">2 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Pièces jointes</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Fichiers (CV, documents) avec stockage objet.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">ING-13</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">3 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Domaines autorisés</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Restreindre les sites autorisés à envoyer vers un formulaire.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">FORM-08</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Fuseau horaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Dates affichées dans le fuseau de l’utilisateur.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">DASH-07</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Connexion Google / GitHub</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Authentification OAuth.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">AUTH-09</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1,5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Accusé de réception</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">E-mail de confirmation au visiteur, destinataires multiples.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">NOT-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Mise en pause d’un formulaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Refuser temporairement les envois.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">FORM-09</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">0,25 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Offre Agence</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Comptes d’équipe, multi-clients, marque blanche.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">PLAN-08</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">5 j</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Contenus SEO</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Blog et tutoriels d’acquisition.</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">PUB-06</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">C</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">Continu</td></tr>
+</table>
+
+<!-- ======================= 10. PLANNING ======================= -->
+<h1>10. Planning prévisionnel</h1>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:20%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Période</td>
+<td style="width:29%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Phase</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Jalons</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Semaine 1</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Phases 0 et 1</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Tests au vert ; bêta en ligne sur Render ; e-mails actifs.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Semaines 2 et 3</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Phase 2 — technique</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Paiement Stripe ; comptes complets ; sécurité renforcée.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Semaine 4</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Phase 2 — légal et exploitation</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Pages légales ; hébergement payant ; supervision ; <b>lancement public</b>.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Mois 2 et 3</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Phase 3</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">File d’attente des e-mails ; anti-spam avancé ; documentation ; back-office.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Mois 4 à 6</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Phase 3</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Intégrations ; statistiques ; offre Agence.</td></tr>
+</table>
+<p class="note">Planning indicatif pour une personne à temps plein sur la partie technique (la phase 2 représente environ 15 jours de travail). La semaine 1 commence à la validation de ce document.</p>
+<h2>Jalons de décision</h2>
+<ul>
+<li><b>Fin de la phase 0</b> : le code est-il fonctionnel ? Sinon, corriger avant toute mise en ligne.</li>
+<li><b>Fin de la phase 1</b> : la bêta fonctionne-t-elle en conditions réelles ? Recueillir les premiers retours.</li>
+<li><b>Avant le lancement public</b> : toutes les exigences « M » de la phase 2 sont-elles réalisées, notamment le paiement, les pages légales et l’hébergement payant ?</li>
+<li><b>À 3 et 6 mois</b> : comparer les indicateurs aux objectifs du chapitre 2.4 et ajuster la stratégie.</li>
+</ul>
+
+<!-- ======================= 11. RECETTE ======================= -->
+<h1>11. Recette — critères d’acceptation du MVP</h1>
+<p>Le MVP est accepté lorsque tous les scénarios ci-dessous donnent le résultat attendu, en local puis en production.</p>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:7%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt;text-align:center">N°</td>
+<td style="width:36%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Scénario</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Résultat attendu</td>
+<td style="width:14%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Statut</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">1</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Créer un compte</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Redirection vers le tableau de bord, message de bienvenue</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">2</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Créer un formulaire</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Endpoint affiché, en <code>https://</code> en production</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">3</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Envoyer le formulaire de démonstration</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Page « Merci » ; soumission visible dans le tableau de bord</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">4</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Envoyer avec une URL de redirection configurée</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Arrivée sur la page configurée</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">5</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Envoyer en JSON via <code>fetch()</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Réponse <code>{"ok": true}</code>, sans quitter la page</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">6</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Remplir le champ piège <code>_gotcha</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Rien n’est enregistré ; page « Merci » affichée</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">7</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Dépasser le quota du plan gratuit</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Refus (402) ; jauge rouge et alerte dans le tableau de bord</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">8</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Exporter en CSV et ouvrir dans Excel</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Colonnes correctes, accents lisibles</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">9</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Ouvrir le formulaire d’un autre compte</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Page introuvable (404)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">10</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Recevoir une notification e-mail</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">E-mail reçu ; « Répondre » écrit au visiteur</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">11</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Ouvrir <code>/healthz</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>{"status": "ok"}</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;text-align:center">12</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Utiliser le service sur mobile</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Interface lisible et utilisable</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;background:#FEF3C7;color:#92400E;font-weight:bold">À tester</td></tr>
+</table>
+
+<!-- ======================= 12. BUDGET ======================= -->
+<h1>12. Budget prévisionnel</h1>
+<table style="border-collapse:collapse;width:100%;margin:0 0 10pt 0"><tr><td style="border:none;border-left:solid #B45309 4.5pt;background:#FEF3C7;padding:7pt 10pt">
+<p style="margin:0">Les tarifs ci-dessous sont des <b>ordres de grandeur</b> à vérifier sur les sites des fournisseurs au moment de la souscription.</p>
+</td></tr></table>
+<h2>12.1 Phase bêta</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:29%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Poste</td>
+<td style="width:49%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Solution</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Coût indicatif</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Application web</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Render, offre gratuite (mise en veille après inactivité)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">0 €</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Base de données</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Render Postgres, offre gratuite (durée de vie limitée)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">0 €</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">E-mails</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Resend, offre gratuite</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">0 €</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Nom de domaine (optionnel)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Registrar (OVH, Gandi, Cloudflare…)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">≈ 10 à 15 € / an</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Total</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">&nbsp;</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><b>≈ 0 €</b> (hors domaine)</td></tr>
+</table>
+<h2>12.2 Production</h2>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Poste</td>
+<td style="width:31%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Solution</td>
+<td style="width:27%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Coût indicatif</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Source à consulter</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Application web</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Render, offre Starter</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">≈ 7 $ / mois</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">render.com/pricing</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Base de données</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Render Postgres, offre Basic 256 Mo</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">≈ 6 à 7 $ / mois</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">render.com/pricing</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">E-mails</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Resend</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Gratuit jusqu’à un certain volume, puis payant</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">resend.com/pricing</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Paiement</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Stripe</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Commission par transaction, sans abonnement</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">stripe.com/fr/pricing</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Suivi des erreurs</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Sentry, offre gratuite</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">0 €</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">sentry.io/pricing</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Nom de domaine</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Registrar</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">≈ 10 à 15 € / an</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">—</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Total</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">&nbsp;</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><b>≈ 15 $ / mois</b> + domaine</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">&nbsp;</td></tr>
+</table>
+<h2>12.3 Coûts hors technique</h2>
+<ul>
+<li><b>Statut juridique</b> : création d’une micro-entreprise (démarche gratuite en France), à confirmer selon la situation du porteur.</li>
+<li><b>Documents juridiques</b> : modèles adaptés, ou relecture par un professionnel pour les CGU/CGV et le DPA.</li>
+<li><b>Comptabilité et assurance</b> : selon le statut choisi ; une responsabilité civile professionnelle est recommandée.</li>
+</ul>
+
+<!-- ======================= 13. RISQUES ======================= -->
+<h1>13. Analyse des risques</h1>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:40%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Risque</td>
+<td style="width:14%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Probabilité</td>
+<td style="width:12%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Impact</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Mesure de réduction</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Spam massif ou abus de l’endpoint public</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Élevée</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyen</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Limitation de débit, Turnstile, quotas</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Perte de données (base gratuite expirée, absence de sauvegarde)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyenne</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Élevé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Base payante avec sauvegardes dès le premier client</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Non-conformité RGPD</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyenne</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Élevé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Pages légales, DPA, durées de conservation, hébergement UE, polices auto-hébergées</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Notifications classées en spam</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyenne</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyen</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Domaine vérifié (SPF, DKIM) chez Resend</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Concurrence d’acteurs établis</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Élevée</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyen</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Niche francophone et européenne, prix, qualité du support</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Adoption trop faible</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyenne</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Élevé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Référencement, communautés, démarchage des freelances</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Lenteur due à la mise en veille (plan gratuit)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Élevée</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyen</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Passage à l’hébergement payant avant le lancement</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Dépendance aux fournisseurs (Render, Resend, Stripe)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Faible</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyen</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Code portable (Procfile, standards ouverts)</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Anomalies non détectées (tests jamais exécutés)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Moyenne</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Élevé</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Phase 0 obligatoire avant toute mise en ligne</td></tr>
+</table>
+
+<!-- ======================= 14. GLOSSAIRE ======================= -->
+<h1>14. Glossaire</h1>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:27%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Terme</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Définition</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Backend</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Partie serveur d’une application, qui reçoit, traite et stocke les données.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Site statique</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Site composé de fichiers HTML, CSS et JavaScript servis tels quels, sans traitement côté serveur.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Endpoint</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Adresse web qui reçoit des données. Chez CatchForm : <code>/f/&lt;identifiant&gt;</code>.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">SaaS</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Logiciel en tant que service : application utilisée en ligne, sur abonnement.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">MVP</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Produit minimum viable : première version réduite aux fonctions essentielles.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">MRR</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Revenu mensuel récurrent (Monthly Recurring Revenue).</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Freemium</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Modèle combinant une offre gratuite limitée et une offre payante.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Champ piège (honeypot)</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Champ invisible pour les humains, rempli par les robots, qui permet d’ignorer le spam.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">CORS</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Mécanisme des navigateurs qui autorise un site à envoyer des requêtes vers un autre domaine.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">CSRF</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Attaque qui fait exécuter une action à un utilisateur connecté à son insu ; contrée par un jeton secret.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Redirection ouverte</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Faille permettant d’envoyer un utilisateur vers un site malveillant via un lien d’apparence légitime.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">RGPD</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Règlement général sur la protection des données de l’Union européenne.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">DPA</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Accord de sous-traitance des données, exigé par l’article 28 du RGPD.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Blueprint Render</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Fichier <code>render.yaml</code> décrivant l’infrastructure que Render crée automatiquement.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">Webhook</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Requête envoyée automatiquement à un autre service lors d’un événement.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt;font-weight:bold">MoSCoW</td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Méthode de priorisation : Must (indispensable), Should (important), Could (souhaitable), Won’t (exclu).</td></tr>
+</table>
+
+<!-- ======================= ANNEXES ======================= -->
+<h1>Annexes</h1>
+<h2>A. Code d’intégration type</h2>
+<p>Code que le client colle sur son site statique, en remplaçant l’adresse par celle de son formulaire :</p>
+<p class="code">&lt;form method="POST" action="https://votre-app.onrender.com/f/IDENTIFIANT"&gt;</p>
+<p class="code">&nbsp;&nbsp;&lt;input name="email" type="email" required&gt;</p>
+<p class="code">&nbsp;&nbsp;&lt;textarea name="message"&gt;&lt;/textarea&gt;</p>
+<p class="code">&nbsp;&nbsp;&lt;input type="hidden" name="_subject" value="Nouveau message du site"&gt;</p>
+<p class="code">&nbsp;&nbsp;&lt;input type="text" name="_gotcha" style="display:none"&gt;</p>
+<p class="code">&nbsp;&nbsp;&lt;button&gt;Envoyer&lt;/button&gt;</p>
+<p class="code">&lt;/form&gt;</p>
+<p>&nbsp;</p>
+<table style="border-collapse:collapse;width:100%">
+<tr>
+<td style="width:22%;border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Champ spécial</td>
+<td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;background:#4F46E5;color:#FFFFFF;font-weight:bold;font-size:9.5pt">Effet</td>
+</tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>_gotcha</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Champ piège : si ce champ caché est rempli, l’envoi est ignoré.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>_subject</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Objet de l’e-mail de notification.</td></tr>
+<tr><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt"><code>email</code></td><td style="border:solid #D9DCE6 1pt;padding:4pt 6pt;font-size:9.5pt">Devient l’adresse de réponse de l’e-mail de notification.</td></tr>
+</table>
+
+<h2>B. Commandes utiles (Windows, PowerShell)</h2>
+<h3>Installation et lancement en local</h3>
+<p class="code">cd C:\Users\toshiba\Flask\catchform</p>
+<p class="code">python -m venv .venv</p>
+<p class="code">.venv\Scripts\python -m pip install -r requirements-dev.txt</p>
+<p class="code">.venv\Scripts\python wsgi.py</p>
+<p style="margin-top:6pt">L’application est alors disponible sur <code>http://127.0.0.1:5000</code>.</p>
+<h3>Exécution des tests</h3>
+<p class="code">.venv\Scripts\python -m pytest</p>
+<h3>Passage d’un client au plan Pro</h3>
+<p class="code">.venv\Scripts\flask --app wsgi set-plan client@exemple.com pro</p>
+<h3>Mise à jour de la production</h3>
+<p class="code">git add .</p>
+<p class="code">git commit -m "Description du changement"</p>
+<p class="code">git push</p>
+<p style="margin-top:6pt">Render redéploie automatiquement l’application à chaque <code>git push</code>. La procédure complète de première mise en ligne figure dans <code>DEPLOIEMENT.md</code>.</p>
+
+</div>
+</body>
+</html>

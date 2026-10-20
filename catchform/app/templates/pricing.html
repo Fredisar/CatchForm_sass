@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Tarifs — CatchForm{% endblock %}
+
+{% block content %}
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Tarifs</span>
+      <h2>Simple et transparent</h2>
+      <p>Commence gratuitement. Passe au plan Pro quand ton site décolle.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Gratuit</h3>
+        <div class="price">0 € <span>/ mois</span></div>
+        <p class="muted">Pour les sites perso et les sites vitrines.</p>
+        <ul>
+          <li>{{ config.FREE_PLAN_MONTHLY_LIMIT }} soumissions par mois</li>
+          <li>Formulaires illimités</li>
+          <li>Notifications e-mail</li>
+          <li>Anti-spam et export CSV</li>
+        </ul>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-ghost btn-block">Commencer gratuitement</a>
+      </div>
+      <div class="price-card featured">
+        <span class="ribbon">Populaire</span>
+        <h3>Pro</h3>
+        <div class="price">9 € <span>/ mois</span></div>
+        <p class="muted">Pour les freelances et les agences.</p>
+        <ul>
+          <li>Soumissions illimitées</li>
+          <li>Tout le plan Gratuit</li>
+          <li>Page « merci » sans la mention CatchForm</li>
+          <li>Support prioritaire</li>
+        </ul>
+        <a href="mailto:{{ config.CONTACT_EMAIL }}?subject=Passer%20%C3%A0%20CatchForm%20Pro" class="btn btn-primary btn-block">Passer Pro</a>
+      </div>
+    </div>
+    <p class="muted price-note">
+      Paiement par carte bientôt disponible. En attendant, écris-nous : on active ton plan Pro rapidement.
+    </p>
+  </div>
+</section>
+{% endblock %}

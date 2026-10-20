@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Tableau de bord — CatchForm{% endblock %}
+
+{% block content %}
+<div class="page">
+  <div class="container">
+    <div class="page-head">
+      <div>
+        <h1>Mes formulaires</h1>
+        <p class="muted">Plan actuel : <span class="badge">{{ 'Pro' if current_user.is_pro else 'Gratuit' }}</span></p>
+      </div>
+    </div>
+
+    {% if not current_user.is_pro %}
+      {% set limit = config.FREE_PLAN_MONTHLY_LIMIT %}
+      {% set pct = [usage * 100 // limit, 100] | min if limit else 100 %}
+      <div class="panel usage">
+        <div class="usage-label">
+          <span>Soumissions ce mois-ci</span>
+          <b>{{ usage }} / {{ limit }}</b>
+        </div>
+        <div class="meter{{ ' meter-full' if usage >= limit else '' }}"><span style="width: {{ pct }}%"></span></div>
+        {% if usage >= limit %}
+          <p class="usage-warn">Limite atteinte : les nouveaux envois sont refusés jusqu'au 1er du mois prochain.
+            <a href="{{ url_for('public.pricing') }}">Passer Pro →</a></p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="panel">
+      <h2>Nouveau formulaire</h2>
+      <p class="panel-sub">Donne-lui un nom. Tu obtiendras aussitôt son URL d'endpoint.</p>
+      <form method="POST" action="{{ url_for('dashboard.create_form') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="row-inline">
+          <div class="field">
+            <label for="name">Nom du formulaire</label>
+            <input type="text" id="name" name="name" maxlength="120" placeholder="Formulaire de contact" required>
+          </div>
+          <div class="field">
+            <label for="redirect_url">Redirection après envoi <span class="muted">(optionnel)</span></label>
+            <input type="url" id="redirect_url" name="redirect_url" placeholder="https://monsite.com/merci">
+          </div>
+          <button type="submit" class="btn btn-primary">Créer</button>
+        </div>
+      </form>
+    </div>
+
+    {% if forms %}
+      <div class="form-list">
+        {% for form in forms %}
+          {% set count = form.submission_count %}
+          <a class="form-row" href="{{ url_for('dashboard.form_detail', public_id=form.public_id) }}">
+            <div>
+              <div class="name">{{ form.name }}</div>
+              <div class="meta">
+                {{ count }} soumission{{ 's' if count != 1 else '' }}
+                · créé le {{ form.created_at.strftime('%d/%m/%Y') }}
+                · <code>/f/{{ form.public_id }}</code>
+              </div>
+            </div>
+            <span class="btn btn-ghost btn-sm">Ouvrir →</span>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty">
+        <div class="ic">📭</div>
+        <h3>Aucun formulaire pour l'instant</h3>
+        <p>Crée ton premier formulaire ci-dessus pour obtenir ton endpoint.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

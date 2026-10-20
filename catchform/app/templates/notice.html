@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="notice-page">
+  <div class="notice-card">
+    <div class="notice-icon {{ 'notice-ok' if ok else 'notice-ko' }}">{{ '✓' if ok else '!' }}</div>
+    <h1>{{ title }}</h1>
+    <p>{{ message }}</p>
+    {% if back_url %}
+      <a href="{{ back_url }}" class="btn btn-primary">← Retour au site</a>
+    {% endif %}
+  </div>
+  {% if not (form and form.owner.is_pro) %}
+    <a class="powered" href="{{ url_for('public.index', _external=True) }}" target="_blank" rel="noopener">
+      Propulsé par <b>◆ CatchForm</b>
+    </a>
+  {% endif %}
+</body>
+</html>

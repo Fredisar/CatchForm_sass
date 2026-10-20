@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Connexion — CatchForm{% endblock %}
+
+{% block content %}
+<div class="auth-wrap">
+  <div class="auth-card">
+    <h1>Content de te revoir 👋</h1>
+    <p class="sub">Connecte-toi pour accéder à tes formulaires.</p>
+    <form method="POST" action="{{ url_for('auth.login', next=request.args.get('next')) }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autofocus placeholder="toi@exemple.com">
+      </div>
+      <div class="field">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+    </form>
+    <p class="auth-switch">Pas encore de compte ? <a href="{{ url_for('auth.register') }}">Créer un compte</a></p>
+  </div>
+</div>
+{% endblock %}

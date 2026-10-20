@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}CatchForm — reçois tes formulaires sans backend{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <span class="pill">◆ Zéro backend · zéro serveur à gérer</span>
+    <h1>Des formulaires qui marchent sur un <span class="grad">site statique</span>.</h1>
+    <p>Colle une URL dans l'attribut <code>action</code> de ton formulaire HTML. CatchForm reçoit chaque soumission, bloque le spam, t'envoie un e-mail et range tout dans un tableau de bord.</p>
+    <div class="hero-cta">
+      <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Créer mon premier formulaire →</a>
+      <a href="{{ url_for('public.pricing') }}" class="btn btn-light">Voir les tarifs</a>
+    </div>
+    <p class="hero-note">Gratuit jusqu'à {{ config.FREE_PLAN_MONTHLY_LIMIT }} soumissions par mois · sans carte bancaire</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2>Opérationnel en 3 minutes</h2>
+      <p>Aucune ligne de code côté serveur. Si tu sais écrire une balise <code>&lt;form&gt;</code>, tu sais utiliser CatchForm.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="step-num">ÉTAPE 1</div>
+        <h3>Crée un formulaire</h3>
+        <p>Un clic dans ton tableau de bord. Tu obtiens une URL d'endpoint unique et impossible à deviner.</p>
+      </div>
+      <div class="card">
+        <div class="step-num">ÉTAPE 2</div>
+        <h3>Colle l'URL</h3>
+        <p>Mets-la dans l'<code>action</code> de ton <code>&lt;form&gt;</code>. Marche avec du HTML pur, Hugo, Jekyll, Astro, Webflow…</p>
+      </div>
+      <div class="card">
+        <div class="step-num">ÉTAPE 3</div>
+        <h3>Reçois les messages</h3>
+        <p>Chaque envoi arrive par e-mail et dans ton tableau de bord. Exporte en CSV quand tu veux.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-soft">
+  <div class="container">
+    <div class="code-wrap">
+      <div>
+        <span class="eyebrow">Intégration</span>
+        <h2>Un copier-coller, pas un SDK</h2>
+        <p class="muted">Ton formulaire reste 100 % HTML. CatchForm se branche juste derrière.</p>
+        <ul class="checks">
+          <li>Envoi natif du formulaire ou <code>fetch()</code> en JSON</li>
+          <li>Anti-spam par champ piège (honeypot), sans captcha</li>
+          <li>Redirection vers ta propre page « merci »</li>
+          <li>Objet de l'e-mail personnalisable avec <code>_subject</code></li>
+        </ul>
+      </div>
+<pre class="code"><span class="cmt">&lt;!-- Sur ton site statique --&gt;</span>
+<span class="tag">&lt;form</span> <span class="attr">method</span>=<span class="str">"POST"</span>
+      <span class="attr">action</span>=<span class="str">"https://catchform.app/f/aB3xYz9Qk2"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">name</span>=<span class="str">"email"</span> <span class="attr">type</span>=<span class="str">"email"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;textarea</span> <span class="attr">name</span>=<span class="str">"message"</span><span class="tag">&gt;&lt;/textarea&gt;</span>
+  <span class="cmt">&lt;!-- piège à robots, invisible --&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">name</span>=<span class="str">"_gotcha"</span> <span class="attr">style</span>=<span class="str">"display:none"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;button&gt;</span>Envoyer<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Fonctionnalités</span>
+      <h2>Tout ce qu'il faut, rien de plus</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="ic">✉️</div><h3>Notifications e-mail</h3><p>Un e-mail à chaque envoi. Clique sur « Répondre » : tu écris directement au visiteur.</p></div>
+      <div class="card"><div class="ic">🛡️</div><h3>Anti-spam</h3><p>Le champ piège arrête les robots sans gêner tes vrais visiteurs.</p></div>
+      <div class="card"><div class="ic">📊</div><h3>Tableau de bord</h3><p>Toutes tes soumissions, lisibles et horodatées, dans une interface claire.</p></div>
+      <div class="card"><div class="ic">📥</div><h3>Export CSV</h3><p>Télécharge tes données en un clic pour Excel, Google Sheets ou ton CRM.</p></div>
+      <div class="card"><div class="ic">🔀</div><h3>Redirection</h3><p>Renvoie le visiteur vers ta propre page « merci » après l'envoi.</p></div>
+      <div class="card"><div class="ic">🌐</div><h3>Tous les sites</h3><p>CORS prêt : envoi depuis n'importe quel domaine, en POST classique ou en <code>fetch()</code>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-soft">
+  <div class="container">
+    <div class="cta">
+      <h2>Prêt à recevoir ta première soumission ?</h2>
+      <p>Crée ton compte gratuit et génère un endpoint en 30 secondes.</p>
+      <a href="{{ url_for('auth.register') }}" class="btn btn-light">Commencer gratuitement</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
